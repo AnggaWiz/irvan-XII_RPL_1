@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --primary-green: #2D5A27;
-  --secondary-green: #4A7856;
-  --accent-gold: #C5A368;
-  --light-bg: #f8faf8;
-  
-  /* Tambahkan variabel untuk text color */
-  --text-primary: #333;
-  --text-dark: #111;
+  --primary-pink: #FFB6C1; /* Soft pink */
+  --secondary-pink: #FF69B4; /* Medium pink */
+  --deep-maroon: #800000; /* Warna Islami */
+  --gold-accent: #D4AF37; /* Akses emas */
+  --off-white: #FFF5EE; /* Background cream */
+  --text-dark: #2E2E2E;
 }
 
 
