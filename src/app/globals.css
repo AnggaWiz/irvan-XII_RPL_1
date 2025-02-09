@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --primary-pink: #FFB6C1; /* Soft pink */
-  --secondary-pink: #FF69B4; /* Medium pink */
-  --deep-maroon: #800000; /* Warna Islami */
-  --gold-accent: #D4AF37; /* Akses emas */
-  --off-white: #FFF5EE; /* Background cream */
-  --text-dark: #2E2E2E;
+  --primary-color: #1A535C; /* Biru Hijau Islami */
+  --secondary-color: #FF6B6B; /* Merah Muted untuk aksen */
+  --accent-color: #4ECDC4; /* Hijau Mint */
+  --text-dark: #2D3748;
+  --text-light: #F7FFF7;
+  --font-title: 'Merriweather', serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 

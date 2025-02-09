@@ -1,434 +1,300 @@
 /* style.module.css */
-
-
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Poppins:wght@300;400;500;600&display=swap');
-
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: linear-gradient(to bottom right, var(--off-white) 60%, rgba(255,182,193,0.1));
-  position: relative;
-  overflow: hidden;
-}
-
-.decorativeBorder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: linear-gradient(90deg, var(--primary-pink) 0%, var(--deep-maroon) 50%, var(--primary-pink) 100%);
-  box-shadow: 0 2px 8px rgba(128, 0, 0, 0.1);
-}
-
-.header {
-  text-align: center;
-  padding: 4rem 2rem 6rem;
-  background: linear-gradient(135deg, rgba(255,182,193,0.1) 0%, rgba(255,105,180,0.05) 100%),
-              url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="%23FFB6C1" stroke-width="2" fill="none" opacity="0.2"/></svg>');
-  position: relative;
-}
-
-.headerContent {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.headerTitle {
+  min-height: 100vh;
+  background-color: #f5f5f5;
   font-family: 'Amiri', serif;
-  font-size: 3.5rem;
-  color: var(--deep-maroon);
-  text-shadow: 2px 2px 4px rgba(255,182,193,0.3);
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.title {
+  text-align: center; 
+  font-size: 2rem; /* Ukuran yang pas untuk judul */
+  font-weight: bold; 
+  margin: 10px 0; /* Jarak atas dan bawah yang seimbang */
+}
+
+
+
+/* Header Styles */
+.header {
+  background: 
+    linear-gradient(135deg, #2c5c7c, #1a3a4a);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 5px solid #c5a368;
+  background-blend-mode: multiply;
+}
+
+
+.header h1 {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.headericon {
+  display: block;
+  margin: 0 auto; /* Tengahkan ikon */
+  font-size: 50px; /* Sesuaikan ukuran */
+  color: #c5a368; /* Warna emas */
+}
+
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #c5a368;
   margin-bottom: 1rem;
 }
 
-.headerSubtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  color: var(--text-dark);
-  letter-spacing: 0.5px;
-}
-
-.headerDivider {
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-pink) 50%, transparent 100%);
-  border: none;
-  margin: 2rem auto;
-}
-
-.section {
-  padding: 4rem 2rem;
-  margin: 2rem 0;
-  background: rgba(255,255,255,0.9);
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(128, 0, 0, 0.05);
-  position: relative;
-}
-
-.sectionIcon {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
+/* Card Container */
+.card {
   background: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: maroon;
-  font-size: 1.8rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.verseCard {
-  background: rgba(255, 182, 193, 0.1);
-  border: 2px solid var(--primary-pink);
   border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
   padding: 2rem;
-  margin: 2rem 0;
-  position: relative;
-  overflow: hidden;
+  max-width: 800px;
+  transition: transform 0.3s ease;
 }
 
-.verseCard::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(45)" opacity="0.1" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23800000"><circle cx="25" cy="25" r="12"/><circle cx="75" cy="75" r="12"/></g></svg>');
-  z-index: -1;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.arabicVerse {
-  font-family: 'Amiri', serif;
-  font-size: 2rem;
-  color: var(--deep-maroon);
-  line-height: 1.8;
-  text-align: right;
-  direction: rtl;
-}
-
-.verseTranslation {
-  font-style: italic;
-  color: var(--text-dark);
-  margin: 1.5rem 0;
-  padding-left: 2rem;
-  border-left: 3px solid var(--primary-pink);
-}
-
+/* Event Details */
 .eventDetails {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.detailIcon {
-  font-size: 2rem;
-  color: var(--primary-green);
-  min-width: 50px;
-}
-
-.detailCard {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
   gap: 1.5rem;
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  margin: 2rem 0;
 }
 
-.detailCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.2);
-}
-
-/* Responsive untuk Mobile */
-@media (max-width: 768px) {
-  .verseCard {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-  }
-
-  .arabicVerse {
-    font-size: 1.5rem; /* Ukuran font lebih kecil */
-    line-height: 1.6;
-  }
-
-  .verseTranslation {
-    font-size: 0.9rem;
-    padding-left: 1rem;
-    border-left-width: 2px;
-  }
-
-  .eventDetails {
-    grid-template-columns: 1fr; /* Menjadikan satu kolom */
-    gap: 1.5rem;
-  }
-
-  .detailCard {
-    flex-direction: column; /* Agar ikon dan teks ada di atas-bawah */
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .detailIcon {
-    font-size: 1.8rem;
-  }
-}
-
-.speakerTopic {
-  font-size: 1.25rem;
-  color: #64748b;
-  margin-top: 1.5rem;
-  font-weight: 500;
-  line-height: 1.6;
-  padding-left: 1.5rem;
-  border-left: 3px solid #93c5fd;
-}
-
-.sectionTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 3rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-.sectionTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #3498db;
-}
-
-.speakerGrid {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.speakerCard {
+.detailItem {
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  margin-bottom: 2rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #c5a368;
 }
 
-.speakerCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+.detailItem span {
+  font-size: 1.1rem;
 }
 
-.speakerImage {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-right: 4px solid #3498db;
-  clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
-  margin-right: 2rem;
+/* Speaker Section */
+.speakerSection {
+  text-align: center; /* Tengahkan semua teks di dalamnya */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Tengahkan elemen secara horizontal */
+  justify-content: center; /* Tengahkan elemen secara vertikal jika diperlukan */
 }
 
-.speakerContent {
-  padding: 2rem;
-  flex: 1;
+.speakerIcon {
+  font-size: 80px; /* Ukuran ikon */
+  margin: 10px 0; /* Jarak atas dan bawah */
+  display: block; /* Agar tetap di tengah */
 }
+
+/* Efek hover untuk memberikan interaksi */
+.speakerIcon:hover {
+  color: darkgoldenrod; /* Warna lebih gelap saat hover */
+  transform: scale(1.1); /* Sedikit perbesar ikon saat hover */
+  transition: 0.3s ease-in-out; /* Animasi halus */
+}
+
 
 .speakerName {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.speakerTopic::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: #e74c3c;
-  font-size: 1.4rem;
-  top: -1px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 .speakerBio {
-  color: #7f8c8d;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: gray;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* Theme Section */
+.themeSection {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f5f0;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.themeSection p {
+  font-size: 1.4rem;
+  color: #2c5c7c;
+  font-weight: bold;
+}
+
+/* Quranic Text Styles */
+.arabicText {
+  font-size: 2rem;
+  text-align: right;
+  line-height: 1.8;
+  color: #1a3a4a;
+  margin: 2rem 0;
+}
+
+/* Inspirational Section */
+.inspirationalSection {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.inspirationalCard {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.inspirationalCard h3 {
+  font-size: 1.8rem;
+  color: #1a3a4a;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #c5a368;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.arabicText {
+  font-size: 2rem;
+  text-align: right;
+  line-height: 1.8;
+  color: #1a3a4a;
+  margin: 1.5rem 0;
+  font-family: 'Amiri', serif;
+}
+
+.inspirationalCard p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+/* Divider */
+.divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c5a368, transparent);
+  margin: 2rem 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .speakerCard {
+  .inspirationalSection {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .inspirationalCard h3 {
+    font-size: 1.5rem;
+  }
+
+  .arabicText {
+    font-size: 1.5rem;
+  }
+
+  .inspirationalCard p {
+    font-size: 1rem;
+  }
+}
+
+/* Divider Styles */
+.divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c5a368, transparent);
+  margin: 2.5rem 0;
+}
+
+/* Tips List */
+.tipsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tipsList li {
+  padding: 1rem;
+  margin: 0.8rem 0;
+  background: #f8f9fa;
+  border-left: 3px solid #c5a368;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tipsList li:hover {
+  transform: translateX(10px);
+  background: #fff;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #1a3a4a;
+  color: white;
+  margin-top: 3rem;
+  border-top: 3px solid #c5a368;
+}
+
+.footer p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .detailItem span {
+    font-size: 1rem;
+  }
+
+  .speakerImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .themeSection p {
+    font-size: 1.2rem;
+  }
+
+  .arabicText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .detailItem {
     flex-direction: column;
     text-align: center;
   }
-  
-  .speakerImage {
-    width: 100%;
-    height: 250px;
-    border-right: none;
-    border-bottom: 4px solid #3498db;
-    clip-path: none;
-    margin-right: 0;
-  }
-  
-  .speakerTopic::before {
-    display: none;
-  }
-  
-  .speakerContent {
-    padding: 2rem 1.5rem;
-  }
-}
-
-.ctaBox {
-  background: linear-gradient(135deg, var(--primary-pink) 0%, var(--secondary-pink) 100%);
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.ctaBox::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q25 40 50 50 Q75 60 100 50 L100 100 L0 100" fill="%23FFFFFF" opacity="0.1"/></svg>');
-}
-
-.ctaTitle {
-  color: white;
-  font-family: 'Amiri', serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.ctaButton {
-  background: var(--deep-maroon);
-  color: white;
-  padding: 1rem 2.5rem;
-  border: none;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  margin-top: 1.5rem;
-}
-
-.ctaButton:hover {
-  background: var(--gold-accent);
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(128, 0, 0, 0.3);
-}
-
-.backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: var(--secondary-pink);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.3s ease;
-  border: 2px solid white;
-}
-
-.backToTop.show {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .headerTitle {
-    font-size: 2.5rem;
-  }
-  
-  .arabicVerse {
-    font-size: 1.5rem;
-  }
-  
-  .eventDetails {
-    grid-template-columns: 1fr;
-  }
-}
-
-.footer {
-  background: pink; /* Latar belakang pink */
-  color: black; /* Mengubah warna teks menjadi hitam agar lebih kontras */
-  padding: 4rem 2rem;
-  margin: 4rem 0 0;
-  position: relative;
-}
-
-.footerContent {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contactText {
-  font-size: 1.2rem; /* Membuat teks sedikit lebih besar */
-  font-weight: bold; /* Menebalkan teks agar lebih jelas */
-  margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Menambahkan efek bayangan */
-}
-
-.footerDivider {
-  width: 200px;
-  height: 2px; /* Membuat garis lebih tebal */
-  background: rgba(0, 0, 0, 0.5); /* Mengubah warna divider agar lebih terlihat */
-  margin: 2rem auto;
-}
-
-.footerQuote {
-  font-style: italic;
-  opacity: 1; /* Menghilangkan efek transparansi */
-  line-height: 1.8;
-  color: #333; /* Warna abu-abu gelap agar lebih mudah dibaca */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
