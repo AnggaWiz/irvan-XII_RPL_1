@@ -1,120 +1,194 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
-import styles from "./style.module.css";
-import { FaMosque, FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUserCircle } from "react-icons/fa";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Image from 'next/image';
+import { FaMosque } from 'react-icons/fa'; // Import ikon dari Font Awesome
 
-export default function DakwahInvitation() {
-  const inspirationalItems = [
-    {
-      title: "Ayat Al-Qur'an Inspiratif",
-      arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَأْكُلُوا الرِّبَا أَضْعَافًا مُضَاعَفَةً وَاتَّقُوا اللَّهَ لَعَلَّكُمْ تُفْلِحُونَ",
-      translation:
-        '"Wahai orang-orang yang beriman! Janganlah kamu memakan riba dengan berlipat ganda, dan bertakwalah kepada Allah agar kamu beruntung." (QS. Ali Imran: 130)',
-    },
-    {
-      title: "Hadits Nabi Muhammad SAW",
-      arabic:
-        "لَعَنَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ آكِلَ الرِّبَا وَمُوكِلَهُ وَكَاتِبَهُ وَشَاهِدَيْهِ، وَقَالَ: هُمْ سَوَاءٌ",
-      translation:
-        '"Rasulullah shallallahu ‘alaihi wa sallam melaknat pemakan riba, yang memberi makan dengan riba, pencatatnya, dan saksinya." (HR. Muslim)',
-    },
-    {
-      title: "Nasihat Ulama",
-      translation:
-        '"Harta haram tidak akan membawa keberkahan, melainkan kehancuran dalam kehidupan dunia dan akhirat." - Imam Al-Ghazali',
-    },
-  ];
+export default function DakwahPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    arrows: false,
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Proses pendaftaran bisa ditambahkan di sini
+    alert('Pendaftaran berhasil! Terima kasih atas partisipasi Anda.');
+    setFormData({ name: '', email: '', phone: '' });
   };
 
   return (
-    <div className={styles.container}>
+    <div className="min-h-screen bg-gray-50 font-poppins">
       <Head>
-        <title>Undangan Dakwah - Bahaya Uang Haram dalam Islam</title>
-        <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet" />
+        <title>Seminar Bahaya Uang Haram - Dakwah Islam</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      <main>
-        <div className={styles.header}>
-          <FaMosque className={styles.headericon} />
-          <h1>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h1>
-          <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-          <p className="text-md mt-4 text-center leading-relaxed">Marilah kita bersama-sama mencari rezeki yang halal dan menjauhi segala bentuk harta haram agar mendapatkan keberkahan dari Allah.</p>
+      {/* Hero Section */}
+      <header className="relative h-screen flex items-center justify-center">
+        <div className="absolute inset-0">
+          {/* Overlay dengan gradasi hijau */}
+          <div className="absolute inset-0 bg-gradient-to-b from-green-600 to-green-800 opacity-70" />
         </div>
+        <div className="relative z-10 text-center text-white px-4">
+          {/* Menggunakan ikon dari Font Awesome */}
+          <FaMosque size={80} className="mx-auto mb-4" />
+          <h1 className="text-5xl md:text-7xl font-bold mb-4">SEMINAR DAKWAH</h1>
+          <p className="text-2xl md:text-3xl mb-8">
+            "Menyingkap Rahasia Uang Haram: Solusi Syariah untuk Kehidupan Lebih Berkah"
+          </p>
+          <p className="mb-10 text-lg md:text-xl">
+            Jadilah bagian dari gerakan perubahan dan temukan kunci menuju keberkahan sejati.
+          </p>
+          <a
+            href="#registration"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition-colors"
+          >
+            Daftar Sekarang
+          </a>
+        </div>
+      </header>
 
-        <div className={styles.card}>
-          <h2 className={styles.title}>Undangan Majelis Ilmu</h2>
-          <div className={styles.eventDetails}>
-            <div className={styles.detailItem}>
-              <FaCalendarAlt className={styles.icon} />
-              <span>Ahad, 15 Syawwal 1445 H / 19 Mei 2024</span>
-            </div>
-            <div className={styles.detailWrapper}>
-              <div className={styles.detailItem}>
-                <FaMapMarkerAlt className={styles.icon} />
-                <span className="text-black">SMK INFOKOM KOTA BOGOR, Jl. Kebajikan No. 123, Kota Baru</span>
-                </div>
-              <div className={styles.detailItem}>
-                <FaClock className={styles.icon} />
-                <span>Ba'da Maghrib - Selesai</span>
-              </div>
-            </div>
-          </div>
-
-          <hr className={styles.divider} />
-
-          <div className={styles.speakerSection}>
-            <h3 className={styles.title}>Pemateri</h3>
-            <FaUserCircle className={styles.speakerIcon} />
-            <p className={styles.speakerName}>Irvan Rizqollah.</p>
-            <p className={styles.speakerBio}>Kelas XII RPL 1</p>
-          </div>
-
-          <hr className={styles.divider} />
-
-          <div className={styles.themeSection}>
-            <h3>Tema Kajian</h3>
-            <p>"Bahaya Uang Haram dan Dampaknya dalam Kehidupan"</p>
-          </div>
-
-          <hr className={styles.divider} />
-
-          <div className={styles.inspirationalSection}>
-            <h3 className={styles.title}>Inspirasi Islami</h3>
-            <Slider {...settings}>
-              {inspirationalItems.map((item, index) => (
-                <div key={index} className={styles.inspirationalCard}>
-                  <h3>{item.title}</h3>
-                  {item.arabic && <p className={styles.arabicText}>{item.arabic}</p>}
-                  <p>{item.translation}</p>
-                </div>
-              ))}
-            </Slider>
-          </div>
-
-          <hr className={styles.divider} />
-
-          <div className={styles.footer}>
-            <p>
-              "Wahai orang-orang yang beriman! Janganlah kamu memakan riba dengan berlipat ganda, dan bertakwalah kepada Allah agar kamu beruntung." (QS. Ali Imran: 130)
+      {/* Content Section */}
+      <section className="py-20 px-4 md:px-8 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Mengapa Anda Harus Hadir?</h2>
+            <p className="text-gray-600 mb-6 text-lg">
+              Uang haram bukan hanya berdampak pada keuangan, namun juga merusak nilai-nilai moral dan spiritual.
+              Seminar ini dirancang untuk membantu Anda memahami risiko serta solusi syariah dalam mengelola keuangan agar lebih berkah.
             </p>
-            <p>📱 Untuk info lebih lanjut: 0812-3456-7890 (Panitia)</p>
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-center">
+                <span className="mr-3 text-emerald-600 text-2xl">🕌</span>
+                <span>Dampak uang haram terhadap keluarga dan masyarakat</span>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3 text-emerald-600 text-2xl">📚</span>
+                <span>Panduan praktis mengelola keuangan sesuai syariat Islam</span>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3 text-emerald-600 text-2xl">⚖️</span>
+                <span>Strategi transaksi halal untuk kehidupan yang lebih berkah</span>
+              </li>
+            </ul>
+          </div>
+          <div className="relative h-96 rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/islam.webp"
+              alt="Islamic Study"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Detail Acara dan Map */}
+      <section className="py-20 bg-gradient-to-r from-emerald-50 to-green-50">
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
+      Detail Acara
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* Container Detail Acara */}
+      <div className="flex flex-wrap gap-6 justify-center">
+        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
+          <span className="text-3xl mr-4">🗓️</span>
+          <p className="text-xl text-gray-700">Ahad, 12 Syawwal 1445 H</p>
+        </div>
+        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
+          <span className="text-3xl mr-4">⏰</span>
+          <p className="text-xl text-gray-700">08.00 - 12.00 WIB</p>
+        </div>
+        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
+          <span className="text-3xl mr-4">📍</span>
+          <p className="text-xl text-gray-700">SMK Infokom, Kota Bogor</p>
+        </div>
+        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
+          <span className="text-3xl mr-4">🎤</span>
+          <p className="text-xl text-gray-700">irvan rizqoulah</p>
+        </div>
+      </div>
+      {/* Container Peta Lokasi */}
+      <div className="w-full h-96 rounded-xl overflow-hidden shadow-xl border border-gray-200 transition duration-300 transform hover:scale-105">
+        <iframe
+          src="https://www.google.com/maps?q=SMK+Infokom+Kota+Bogor&output=embed"
+          width="100%"
+          height="100%"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="border-0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* Form Pendaftaran */}
+      <section id="registration" className="py-20 px-4">
+        <div className="max-w-xl mx-auto bg-white rounded-xl shadow-2xl p-10">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">Daftar Sekarang</h2>
+          <p className="text-center text-gray-600 mb-8 text-lg">
+            Jangan lewatkan kesempatan untuk mendapatkan wawasan mendalam yang dapat mengubah hidup Anda.
+            Isi formulir di bawah ini dan segera bergabung bersama kami!
+          </p>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-gray-700 mb-2">Nama Lengkap</label>
+              <input
+                type="text"
+                required
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2">Email</label>
+              <input
+                type="email"
+                required
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 mb-2">Nomor HP</label>
+              <input
+                type="tel"
+                required
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold transition-colors"
+            >
+              Kirim Pendaftaran
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-emerald-800 text-white py-8 text-center">
+        <p>© 2024 Majelis Dakwah Al-Huda. All rights reserved.</p>
+        <div className="mt-4 flex justify-center space-x-6">
+          <a href="#" className="hover:text-emerald-200">Facebook</a>
+          <a href="#" className="hover:text-emerald-200">Instagram</a>
+          <a href="#" className="hover:text-emerald-200">YouTube</a>
+        </div>
+      </footer>
     </div>
   );
 }
