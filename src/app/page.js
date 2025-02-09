@@ -89,46 +89,48 @@ export default function DakwahPage() {
       </section>
 
       {/* Detail Acara dan Map */}
-      <section className="py-20 bg-gradient-to-r from-emerald-50 to-green-50">
-  <div className="max-w-6xl mx-auto px-6">
-    <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
-      Detail Acara
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-      {/* Container Detail Acara */}
-      <div className="flex flex-wrap gap-6 justify-center">
-        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
-          <span className="text-3xl mr-4">🗓️</span>
-          <p className="text-xl text-gray-700">Ahad, 12 Syawwal 1445 H</p>
+      <div className="container mx-auto p-6">
+  <section className="py-20 bg-gradient-to-b from-emerald-50 to-white rounded-xl shadow-lg">
+    <div className="max-w-5xl mx-auto text-center">
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Detail Acara</h2>
+      <hr className="border-t-2 border-emerald-300 w-24 mx-auto mb-8" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        {/* Container untuk detail acara */}
+        <div className="grid grid-cols-1 gap-6">
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition duration-300 ease-in-out flex items-center justify-center">
+            <span className="mr-3 text-2xl">🗓️</span>
+            <span className="text-xl text-gray-700">Ahad, 12 Syawwal 1445 H</span>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition duration-300 ease-in-out flex items-center justify-center">
+            <span className="mr-3 text-2xl">⏰</span>
+            <span className="text-xl text-gray-700">08.00 - 12.00 WIB</span>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition duration-300 ease-in-out flex items-center justify-center">
+            <span className="mr-3 text-2xl">📍</span>
+            <span className="text-xl text-gray-700">SMK Infokom, Jl. Setiabudi No. 45, Bandung</span>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition duration-300 ease-in-out flex items-center justify-center">
+            <span className="mr-3 text-2xl">🎤</span>
+            <span className="text-xl text-gray-700">IRVAN RIZQOLLAH</span>
+          </div>
         </div>
-        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
-          <span className="text-3xl mr-4">⏰</span>
-          <p className="text-xl text-gray-700">08.00 - 12.00 WIB</p>
+        {/* Container untuk peta lokasi */}
+        <div className="w-full h-80 rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps?q=SMK+Infokom+Bandung&output=embed"
+            width="100%"
+            height="100%"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="border-0"
+          ></iframe>
         </div>
-        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
-          <span className="text-3xl mr-4">📍</span>
-          <p className="text-xl text-gray-700">SMK Infokom, Kota Bogor</p>
-        </div>
-        <div className="flex items-center justify-center bg-white p-8 rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl w-full md:w-1/2 lg:w-1/3">
-          <span className="text-3xl mr-4">🎤</span>
-          <p className="text-xl text-gray-700">irvan rizqoulah</p>
-        </div>
-      </div>
-      {/* Container Peta Lokasi */}
-      <div className="w-full h-96 rounded-xl overflow-hidden shadow-xl border border-gray-200 transition duration-300 transform hover:scale-105">
-        <iframe
-          src="https://www.google.com/maps?q=SMK+Infokom+Kota+Bogor&output=embed"
-          width="100%"
-          height="100%"
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="border-0"
-        ></iframe>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
+
 
 
       {/* Form Pendaftaran */}
